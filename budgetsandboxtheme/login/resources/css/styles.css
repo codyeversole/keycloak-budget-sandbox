@@ -1,0 +1,67 @@
+
+@font-face {
+    font-family: SourceCodePro-Regular;
+    src: url(./fonts/SourceCodePro-Regular.ttf);
+}
+
+@font-face {
+    font-family: Wix;
+    src: url(./fonts/WixMadeforDisplay-Regular.ttf);
+}
+
+.login-pf body {
+    background: #af5500;
+    font-family: Wix;
+}
+
+#kc-header {
+    color: black;
+}
+
+.web-icon {
+    max-height: 4rem;
+}
+
+input[type="text"], input[type="password"] {
+    font-family: Wix;
+    border-color: #e2e8f0 !important;;
+    border-width: 2px !important;;
+    border-radius: 0.25rem !important;;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: white !important;
+}
+
+.pf-m-primary {
+    background-color: #fbbf24 !important;
+    color: #000 !important;
+}
+
+.card-pf {
+    border-color: #fbbf24 !important;
+}
+
+#kc-header-wrapper {
+    text-transform: capitalize;
+    color: white;
+    font-family: SourceCodePro-Regular;
+}
+
+@media (max-width: 767px) {
+    #kc-header {
+        text-align: center;
+    }
+
+    #kc-header-wrapper {
+        text-transform: capitalize;
+        color: white;
+        font-family: SourceCodePro-Regular;
+
+        font-size: 29px;
+        letter-spacing: 3px;
+        line-height: 1.2em;
+        padding: 62px 10px 20px;
+        white-space: normal;
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,29 @@
+services:
+  keycloak_db:
+    image: postgres
+    healthcheck:
+      test: "exit 0"
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=keycloak
+    volumes:
+      - keycloak-data:/var/lib/postgresql/data
+  keycloak_web:
+    depends_on:
+      keycloak_db:
+        condition: service_healthy
+    image: quay.io/keycloak/keycloak:latest
+    command: start-dev --spi-theme-static-max-age=-1 --spi-theme-cache-themes=false --spi-theme-cache-templates=false --db postgres --db-url-host keycloak_db --db-username admin --db-password password
+    ports: 
+      - "8080:8080"
+    volumes:
+      - './budgetsandboxtheme:/opt/keycloak/themes/budgetsandboxtheme'
+    environment:
+      - KEYCLOAK_ADMIN=user
+      - KEYCLOAK_ADMIN_PASSWORD=password
+volumes:
+  keycloak-data:
