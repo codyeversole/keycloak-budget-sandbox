@@ -1,2 +1,7 @@
-If using http, you must start the containers, update the master real to have ssl_required colum in postgress to 'NONE'
-Then restart the containers for it to take affect.
+# Keycloak Budget Sandbox
+
+This project is the self hosted keycloak instance for budgetsandbox.com. The application allows users to create multiple budgets, evaluate cash flow, set goals, and organize financial accounts.
+
+## Project Status
+
+This project is currently in development.
